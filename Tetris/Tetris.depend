@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1443798453 source:c:\users\petar\documents\tetris\tetris\main.cpp
+	<iostream>
+	<GL/glut.h>
+	"MatrixFigureT.h"
+	"TetrisMatrix.h"
+
+1443802342 source:c:\users\petar\documents\tetris\tetris\src\tetrismatrix.cpp
+	"TetrisMatrix.h"
+
+1443801643 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
+	<iostream>
+
+1443804413 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
+	"MatrixFigure.h"
+
+1443801102 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
+	"MatrixUnit.h"
+	"Moving.h"
+	"TetrisMatrix.h"
+
+1443804430 c:\users\petar\documents\tetris\tetris\include\matrixunit.h
+	<iostream>
+	"Moving.h"
+	"TetrisMatrix.h"
+
+1443802227 source:c:\users\petar\documents\tetris\tetris\src\matrixunit.cpp
+	"MatrixUnit.h"
+
+1443793318 c:\users\petar\documents\tetris\tetris\include\moving.h
+
+1443801109 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguret.cpp
+	"MatrixFigureT.h"
+
+1443801116 c:\users\petar\documents\tetris\tetris\include\matrixfiguret.h
+	"MatrixFigure.h"
+
+1443791760 source:c:\users\petar\documents\tetris\tetris\src\moving.cpp
+	"Moving.h"
+

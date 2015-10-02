@@ -1,24 +1,19 @@
-
-// Created by: Dean Nicholls
-// Date: 18th June 2010
-// Created For: http://www.levelbylevel.com
-//
-// This is a small OpenGL application which will display a
-// blue sphere on a black background.
-//
-// This Program was created to acompany the tutorial
-// for setting up CodeBlocks, MinGW, OpenGL and GLUT.
-// Found at: http://www.levelbylevel.com
-//
-// It is not intended to be a guide or even a good
-// template for building a graphic application. It is
-// therefore not properly commented or efficient.
-// However feel free to use this code in any way you wish.
-
 #include <iostream>
 #include <GL/glut.h>
 
+#include "MatrixFigureT.h"
+#include "TetrisMatrix.h"
+
 using namespace std;
+
+/*
+    TO DO :
+     - IMPLEMENTIRAJ SINGLTON ZA TETRIS MATRIX
+     - IMPLEMENTIRAJ SINGLTON ZA MATRIX FIGURE
+*/
+
+TetrisMatrix matrix;
+MatrixFigureT figure(matrix);
 
 GLfloat mat_ambient[] = {0.5, 0.5, 0.5, 1.0};
 GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
@@ -90,9 +85,24 @@ void display(void) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
-		case 27:
-			exit(0); // Exit the application if 'Esc' key is pressed
+    case 'a' : case 'A' :
+        cout << "proba za a" << endl; break;
+    case 27:
+        exit(0); // Exit the application if 'Esc' key is pressed
 	}
+}
+
+void special(int key, int x, int y) {
+	switch (key) {
+		case GLUT_KEY_UP:
+		    figure.move(MatrixFigure::UP); break;
+		case GLUT_KEY_DOWN :
+            figure.move(MatrixFigure::DOWN); break;
+        case GLUT_KEY_LEFT :
+            figure.move(MatrixFigure::LEFT); break;
+        case GLUT_KEY_RIGHT:
+            figure.move(MatrixFigure::RIGHT); break;
+        }
 }
 
 void animate() {
@@ -100,14 +110,19 @@ void animate() {
 }
 
 int main(int argc, char * argv[]) {
+
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize (800, 600);
     glutCreateWindow (argv[0]);   init();
-    glutKeyboardFunc (keyboard);
-    glutDisplayFunc (display);
-    glutReshapeFunc (reshape);
-    glutIdleFunc(animate);
+
+    glutKeyboardFunc    (keyboard);
+    glutDisplayFunc     (display );
+    glutReshapeFunc     (reshape );
+    glutSpecialFunc     (special );
+    glutIdleFunc        (animate );
+
     glutMainLoop();
+
     return 0;
 }
