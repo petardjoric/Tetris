@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -29,8 +31,25 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="glut32" />
+		</Linker>
+		<Unit filename="include/MatrixFigure.h" />
+		<Unit filename="include/MatrixFigureT.h" />
+		<Unit filename="include/MatrixUnit.h" />
+		<Unit filename="include/Moving.h" />
+		<Unit filename="include/TetrisMatrix.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/MatrixFigure.cpp" />
+		<Unit filename="src/MatrixFigureT.cpp" />
+		<Unit filename="src/MatrixUnit.cpp" />
+		<Unit filename="src/Moving.cpp" />
+		<Unit filename="src/TetrisMatrix.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

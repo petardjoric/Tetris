@@ -1,35 +1,40 @@
 # depslib dependency file v1.0
-1443798453 source:c:\users\petar\documents\tetris\tetris\main.cpp
+1443984204 source:c:\users\petar\documents\tetris\tetris\main.cpp
 	<iostream>
 	<GL/glut.h>
 	"MatrixFigureT.h"
 	"TetrisMatrix.h"
+	"TetrisVisual.h"
 
-1443802342 source:c:\users\petar\documents\tetris\tetris\src\tetrismatrix.cpp
+1443805209 source:c:\users\petar\documents\tetris\tetris\src\tetrismatrix.cpp
 	"TetrisMatrix.h"
 
-1443801643 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
+1443808248 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
 	<iostream>
 
-1443804413 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
+1443978638 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
 	"MatrixFigure.h"
 
-1443801102 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
+1443984366 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
 	"MatrixUnit.h"
 	"Moving.h"
 	"TetrisMatrix.h"
+	"UnitVisual.h"
+	"FigureColors.h"
 
-1443804430 c:\users\petar\documents\tetris\tetris\include\matrixunit.h
+1443977877 c:\users\petar\documents\tetris\tetris\include\matrixunit.h
 	<iostream>
 	"Moving.h"
 	"TetrisMatrix.h"
+	"UnitVisual.h"
+	"TranslateMatrixToVisual.h"
 
-1443802227 source:c:\users\petar\documents\tetris\tetris\src\matrixunit.cpp
+1443977884 source:c:\users\petar\documents\tetris\tetris\src\matrixunit.cpp
 	"MatrixUnit.h"
 
 1443793318 c:\users\petar\documents\tetris\tetris\include\moving.h
 
-1443801109 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguret.cpp
+1443979209 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguret.cpp
 	"MatrixFigureT.h"
 
 1443801116 c:\users\petar\documents\tetris\tetris\include\matrixfiguret.h
@@ -37,4 +42,30 @@
 
 1443791760 source:c:\users\petar\documents\tetris\tetris\src\moving.cpp
 	"Moving.h"
+
+1443980297 c:\users\petar\documents\tetris\tetris\include\unitvisual.h
+	<GL/gl.h>
+	<GL/glut.h>
+
+1443980518 source:c:\users\petar\documents\tetris\tetris\src\unitvisual.cpp
+	"UnitVisual.h"
+
+1443983757 c:\users\petar\documents\tetris\tetris\include\translatematrixtovisual.h
+	"TetrisMatrix.h"
+	"UnitVisual.h"
+
+1443978975 c:\users\petar\documents\tetris\tetris\include\figurecolors.h
+
+1443979013 source:c:\users\petar\documents\tetris\tetris\src\figurecolors.cpp
+	"FigureColors.h"
+
+1443982336 source:c:\users\petar\documents\tetris\tetris\src\tetrisvisual.cpp
+	"TetrisVisual.h"
+
+1443984214 c:\users\petar\documents\tetris\tetris\include\tetrisvisual.h
+	<vector>
+	"UnitVisual.h"
+
+1443984686 source:c:\users\petar\documents\tetris\tetris\src\translatematrixtovisual.cpp
+	"TranslateMatrixToVisual.h"
 

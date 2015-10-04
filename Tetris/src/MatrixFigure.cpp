@@ -1,35 +1,34 @@
 #include "MatrixFigure.h"
 
-MatrixFigure::MatrixFigure(TetrisMatrix& matrix)
+MatrixFigure::MatrixFigure(TetrisMatrix& matrix, float color[3])
+    : unitsVisual{UnitVisual(color), UnitVisual(color), UnitVisual(color), UnitVisual(color)},
+        unitsMatrix{MatrixUnit(matrix, unitsVisual[0]), MatrixUnit(matrix, unitsVisual[1]), MatrixUnit(matrix, unitsVisual[2]), MatrixUnit(matrix, unitsVisual[3])}
 {
-    for(int i=0; i<4; i++)
-        units[i].setMatrix(matrix);
-
     _matrix = &matrix;
 }
 
 void MatrixFigure::move_down()
 {
     for(int i=0; i<4; i++)
-        units[i].move_down();
+        unitsMatrix[i].move_down();
 }
 
 void MatrixFigure::move_right()
 {
     for(int i=0; i<4; i++)
-        units[i].move_right();
+        unitsMatrix[i].move_right();
 }
 
 void MatrixFigure::move_left()
 {
     for(int i=0; i<4; i++)
-        units[i].move_left();
+        unitsMatrix[i].move_left();
 }
 
 void MatrixFigure::move(DIRECTION dir)
 {
     for(int i=0; i<4; i++)
-        units[i].clearMatrix();
+        unitsMatrix[i].clearMatrix();
 
     switch(dir)
     {
@@ -40,7 +39,7 @@ void MatrixFigure::move(DIRECTION dir)
     }
 
     for(int i=0; i<4; i++)
-        units[i].imprintInMatrix();
+        unitsMatrix[i].imprintInMatrix();
 
     _matrix->printMatrix();
 }

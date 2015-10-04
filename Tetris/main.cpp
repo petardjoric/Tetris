@@ -3,6 +3,7 @@
 
 #include "MatrixFigureT.h"
 #include "TetrisMatrix.h"
+#include "TetrisVisual.h"
 
 using namespace std;
 
@@ -14,39 +15,11 @@ using namespace std;
 
 TetrisMatrix matrix;
 MatrixFigureT figure(matrix);
+TetrisVisual tetris;
 
-GLfloat mat_ambient[] = {0.5, 0.5, 0.5, 1.0};
-GLfloat mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat mat_shininess[] = {50.0};
-GLfloat light_position[] = {10.0, 10.0, 10.0, 0.0};
-GLfloat model_ambient[] = {1.0, 0.5, 0.5, 1.0};
-
-void setupMaterials() {
-	glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
-	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
-	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
-}
-
-void changeColour(GLfloat r, GLfloat g, GLfloat b, GLfloat A) {
-	model_ambient[0] = r;
-	model_ambient[1] = g;
-	model_ambient[2] = b;
-	model_ambient[3] = A;
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, model_ambient);
-}
 
 void init(void) {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-	setupMaterials();
-
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glFrontFace(GL_CCW);
-	glShadeModel(GL_SMOOTH);
 }
 
 void reshape(int w, int h) {
@@ -67,17 +40,10 @@ void reshape(int w, int h) {
 }
 
 void display(void) {
-	int slices = 30;
-	int stacks = 30;
-	float radius = 0.2;
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glPushMatrix();
-        changeColour(0.0, 0.0, 1.0, 1.0);
-        glTranslatef(0.0, 0.0, 0.1);
-        glutSolidSphere(radius, slices, stacks);
-    glPopMatrix();
+    figure.draw();
+    tetris.draw();
 
 	glFlush();
     glutSwapBuffers();

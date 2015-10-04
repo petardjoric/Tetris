@@ -1,12 +1,8 @@
 #include "MatrixUnit.h"
 
-MatrixUnit::MatrixUnit()
+MatrixUnit::MatrixUnit(TetrisMatrix& matrix, UnitVisual & unitVisual)
 {
-
-}
-
-void MatrixUnit::setMatrix(TetrisMatrix& matrix)
-{
+    visualRepresentation = &unitVisual;
     _matrix = &matrix;
 }
 
@@ -31,6 +27,8 @@ void MatrixUnit::set(int x, int y)
 {
     _x = (short)x;
     _y = (short)y;
+
+    TranslateMatrixToVisual translate(*visualRepresentation, _x, _y);
 }
 
 MatrixUnit::~MatrixUnit()
