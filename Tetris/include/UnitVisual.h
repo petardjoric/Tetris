@@ -7,6 +7,7 @@
 class UnitVisual
 {
     public:
+        UnitVisual() {} ;
         UnitVisual(float color[3]);
         virtual ~UnitVisual();
 

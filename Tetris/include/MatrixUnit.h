@@ -11,6 +11,7 @@
 class MatrixUnit : public Moving
 {
     public:
+        MatrixUnit() {} ;
         MatrixUnit(TetrisMatrix& matrix, UnitVisual & unitVisual);
         virtual ~MatrixUnit();
 
@@ -21,9 +22,13 @@ class MatrixUnit : public Moving
         short _x, _y;
 
         // inherited from abstract class Moving
-        void move_down () { _x += 1;  TranslateMatrixToVisual translate(*visualRepresentation, _x, _y); }
-        void move_left () { _y -= 1;  TranslateMatrixToVisual translate(*visualRepresentation, _x, _y); }
-        void move_right() { _y += 1;  TranslateMatrixToVisual translate(*visualRepresentation, _x, _y); }
+        bool move_down ();
+        bool move_left ();
+        bool move_right();
+
+        bool can_move_down();
+        bool can_move_left();
+        bool can_move_right();
 
         void imprintInMatrix();
         void clearMatrix();

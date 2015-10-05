@@ -1,7 +1,7 @@
 #include "MatrixFigureT.h"
 
-MatrixFigureT::MatrixFigureT(TetrisMatrix& matrix)
-    : MatrixFigure(matrix, colors.FigureTColor)
+MatrixFigureT::MatrixFigureT(TetrisMatrix& matrix, TetrisVisual& tetris)
+    : MatrixFigure(matrix, tetris, colors.FigureTColor)
 {
     init_units();
 
@@ -16,7 +16,7 @@ void MatrixFigureT::init_units()
     unitsMatrix[3].set(0,3);
 }
 
-void MatrixFigureT::rotate_figure()
+bool MatrixFigureT::rotate_figure()
 {
 
 }

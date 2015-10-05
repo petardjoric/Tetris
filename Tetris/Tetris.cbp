@@ -39,17 +39,25 @@
 			<Add library="glu32" />
 			<Add library="glut32" />
 		</Linker>
+		<Unit filename="include/FigureColors.h" />
 		<Unit filename="include/MatrixFigure.h" />
 		<Unit filename="include/MatrixFigureT.h" />
 		<Unit filename="include/MatrixUnit.h" />
 		<Unit filename="include/Moving.h" />
 		<Unit filename="include/TetrisMatrix.h" />
+		<Unit filename="include/TetrisVisual.h" />
+		<Unit filename="include/TranslateMatrixToVisual.h" />
+		<Unit filename="include/UnitVisual.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/FigureColors.cpp" />
 		<Unit filename="src/MatrixFigure.cpp" />
 		<Unit filename="src/MatrixFigureT.cpp" />
 		<Unit filename="src/MatrixUnit.cpp" />
 		<Unit filename="src/Moving.cpp" />
 		<Unit filename="src/TetrisMatrix.cpp" />
+		<Unit filename="src/TetrisVisual.cpp" />
+		<Unit filename="src/TranslateMatrixToVisual.cpp" />
+		<Unit filename="src/UnitVisual.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

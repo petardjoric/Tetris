@@ -7,11 +7,11 @@ class MatrixFigureT : public MatrixFigure
 {
 
     public:
-        MatrixFigureT(TetrisMatrix& matrix);
+        MatrixFigureT(TetrisMatrix& matrix, TetrisVisual& tetris);
         virtual ~MatrixFigureT();
     protected:
         // inherited from abstract class MatrixFigure
-         void rotate_figure();
+         bool rotate_figure();
          void init_units();
 };
 

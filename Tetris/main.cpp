@@ -1,6 +1,9 @@
 #include <iostream>
 #include <GL/glut.h>
 
+#define TIMER_ID 0
+#define TIMER_INTERVAL 100
+
 #include "MatrixFigureT.h"
 #include "TetrisMatrix.h"
 #include "TetrisVisual.h"
@@ -14,8 +17,8 @@ using namespace std;
 */
 
 TetrisMatrix matrix;
-MatrixFigureT figure(matrix);
 TetrisVisual tetris;
+MatrixFigure* figure;
 
 
 void init(void) {
@@ -42,7 +45,7 @@ void reshape(int w, int h) {
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    figure.draw();
+    figure->draw();
     tetris.draw();
 
 	glFlush();
@@ -61,13 +64,18 @@ void keyboard(unsigned char key, int x, int y) {
 void special(int key, int x, int y) {
 	switch (key) {
 		case GLUT_KEY_UP:
-		    figure.move(MatrixFigure::UP); break;
+		    figure->rotate_figure(); break;
 		case GLUT_KEY_DOWN :
-            figure.move(MatrixFigure::DOWN); break;
+            if( ! figure->move_down() )
+            {
+                delete figure;
+                figure = new MatrixFigureT(matrix, tetris);
+            }
+                break;
         case GLUT_KEY_LEFT :
-            figure.move(MatrixFigure::LEFT); break;
+            figure->move_left(); break;
         case GLUT_KEY_RIGHT:
-            figure.move(MatrixFigure::RIGHT); break;
+            figure->move_right(); break;
         }
 }
 
@@ -87,6 +95,8 @@ int main(int argc, char * argv[]) {
     glutReshapeFunc     (reshape );
     glutSpecialFunc     (special );
     glutIdleFunc        (animate );
+
+    figure = new MatrixFigureT(matrix, tetris);
 
     glutMainLoop();
 

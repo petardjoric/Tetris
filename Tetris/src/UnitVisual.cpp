@@ -1,10 +1,9 @@
 #include "UnitVisual.h"
 
 UnitVisual::UnitVisual(float color[3])
+    : _color{color[0], color[1], color[2]}
 {
-    _color[0] = color[0];
-    _color[1] = color[1];
-    _color[2] = color[2];
+
 }
 
 void UnitVisual::drawUnit()
