@@ -68,10 +68,7 @@ bool  MatrixUnit::can_move_left()
 bool  MatrixUnit::can_move_right()
 {
     if( !_matrix->matrix[_x][_y+1] && _y+1 < MATRIX_SIZE)
-    {
-        std::cout << "proso za desno x : " << _x << " y : " << _y << std::endl;
         return true;
-    }
     return false;
 }
 

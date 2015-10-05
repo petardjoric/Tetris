@@ -41,8 +41,13 @@
 		</Linker>
 		<Unit filename="include/FigureColors.h" />
 		<Unit filename="include/MatrixFigure.h" />
+		<Unit filename="include/MatrixFigureMoveFacade.h" />
 		<Unit filename="include/MatrixFigureT.h" />
 		<Unit filename="include/MatrixUnit.h" />
+		<Unit filename="include/MovementType.h" />
+		<Unit filename="include/MovementTypeMoveDown.h" />
+		<Unit filename="include/MovementTypeMoveLeft.h" />
+		<Unit filename="include/MovementTypeMoveRight.h" />
 		<Unit filename="include/Moving.h" />
 		<Unit filename="include/TetrisMatrix.h" />
 		<Unit filename="include/TetrisVisual.h" />
@@ -51,8 +56,13 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/FigureColors.cpp" />
 		<Unit filename="src/MatrixFigure.cpp" />
+		<Unit filename="src/MatrixFigureMoveFacade.cpp" />
 		<Unit filename="src/MatrixFigureT.cpp" />
 		<Unit filename="src/MatrixUnit.cpp" />
+		<Unit filename="src/MovementType.cpp" />
+		<Unit filename="src/MovementTypeMoveDown.cpp" />
+		<Unit filename="src/MovementTypeMoveLeft.cpp" />
+		<Unit filename="src/MovementTypeMoveRight.cpp" />
 		<Unit filename="src/Moving.cpp" />
 		<Unit filename="src/TetrisMatrix.cpp" />
 		<Unit filename="src/TetrisVisual.cpp" />

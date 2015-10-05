@@ -6,6 +6,7 @@
 #define DELTA_TIME 10
 
 #include "MatrixFigureT.h"
+#include "MatrixFigureCube.h"
 #include "TetrisMatrix.h"
 #include "TetrisVisual.h"
 
@@ -32,7 +33,7 @@ void init(void) {
     delta_time = DELTA_TIME;
     max_speed = false;
 
-    figure = new MatrixFigureT(matrix, tetris);
+    figure = new MatrixFigureCube(matrix, tetris);
 }
 
 void reshape(int w, int h) {
@@ -64,7 +65,7 @@ void on_timer(int value){
         if( ! figure->move_down() )
             {
                 delete figure;
-                figure = new MatrixFigureT(matrix, tetris);
+                figure = new MatrixFigureCube(matrix, tetris);
                 max_speed = false;
             }
 
