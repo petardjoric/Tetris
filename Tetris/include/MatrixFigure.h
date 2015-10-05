@@ -6,6 +6,11 @@
 #include "UnitVisual.h"
 #include "FigureColors.h"
 #include "TetrisVisual.h"
+#include "MovementType.h"
+#include "MovementTypeMoveDown.h"
+#include "MovementTypeMoveLeft.h"
+#include "MatrixFigureMoveFacade.h"
+#include "MovementTypeMoveRight.h"
 
 class MatrixFigure //: public Moving
 {

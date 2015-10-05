@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1444064771 source:c:\users\petar\documents\tetris\tetris\main.cpp
+1444066752 source:c:\users\petar\documents\tetris\tetris\main.cpp
 	<iostream>
 	<GL/glut.h>
 	"MatrixFigureT.h"
@@ -12,17 +12,22 @@
 1444053015 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
 	<iostream>
 
-1444052389 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
+1444072312 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
 	"MatrixFigure.h"
 
-1444049481 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
+1444070801 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
 	"MatrixUnit.h"
 	"TetrisMatrix.h"
 	"UnitVisual.h"
 	"FigureColors.h"
 	"TetrisVisual.h"
+	"MovementType.h"
+	"MovementTypeMoveDown.h"
+	"MovementTypeMoveLeft.h"
+	"MatrixFigureMoveFacade.h"
+	"MovementTypeMoveRight.h"
 
-1444047210 c:\users\petar\documents\tetris\tetris\include\matrixunit.h
+1444070838 c:\users\petar\documents\tetris\tetris\include\matrixunit.h
 	<iostream>
 	"Moving.h"
 	"TetrisMatrix.h"
@@ -68,4 +73,44 @@
 
 1443984686 source:c:\users\petar\documents\tetris\tetris\src\translatematrixtovisual.cpp
 	"TranslateMatrixToVisual.h"
+
+1444069991 c:\users\petar\documents\tetris\tetris\include\movementtype.h
+	<vector>
+	"MatrixUnit.h"
+
+1444069970 c:\users\petar\documents\tetris\tetris\include\movementtypemovedown.h
+	<vector>
+	"MovementType.h"
+
+1444069979 c:\users\petar\documents\tetris\tetris\include\movementtypemoveleft.h
+	<vector>
+	"MovementType.h"
+
+1444072388 c:\users\petar\documents\tetris\tetris\include\matrixfiguremovefacade.h
+	<vector>
+	"MatrixUnit.h"
+	"MovementType.h"
+
+1444071099 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguremovefacade.cpp
+	"MatrixFigureMoveFacade.h"
+	<iostream>
+
+1444070481 source:c:\users\petar\documents\tetris\tetris\src\movementtype.cpp
+	"MovementType.h"
+	<iostream>
+
+1444069749 source:c:\users\petar\documents\tetris\tetris\src\movementtypemovedown.cpp
+	"MovementTypeMoveDown.h"
+
+1444070772 source:c:\users\petar\documents\tetris\tetris\src\movementtypemoveleft.cpp
+	"MovementTypeMoveLeft.h"
+	<iostream>
+
+1444070709 c:\users\petar\documents\tetris\tetris\include\movementtypemoveright.h
+	<vector>
+	"MovementType.h"
+
+1444070766 source:c:\users\petar\documents\tetris\tetris\src\movementtypemoveright.cpp
+	"MovementTypeMoveRight.h"
+	<iostream>
 

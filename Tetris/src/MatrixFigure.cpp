@@ -10,95 +10,36 @@ MatrixFigure::MatrixFigure(TetrisMatrix& matrix, TetrisVisual& tetris, float col
 
 bool MatrixFigure::move_down()
 {
-   for(auto &unit : unitsMatrix)
-        unit.clearMatrix();
+    MovementType* mTypeDown = new MovementTypeMoveDown(unitsMatrix);
+    MatrixFigureMoveFacade moveFacade(unitsMatrix, *mTypeDown);
 
-    bool canMove = true;
-    for(int i=0; i<4; i++)
-        canMove &= unitsMatrix[i].can_move_down();
-
-    if( canMove )
-        for(auto &unit : unitsMatrix)
-            unit.move_down();
-
-    for(auto &unit : unitsMatrix)
-        unit.imprintInMatrix();
+    delete mTypeDown;
 
     _matrix->printMatrix();
 
-    return canMove;
+    return moveFacade.canMove();
 }
 
 void MatrixFigure::move_right()
 {
-    for(auto &unit : unitsMatrix)
-        unit.clearMatrix();
+    MovementType* mTypeRight = new MovementTypeMoveRight(unitsMatrix);
+    MatrixFigureMoveFacade moveFacade(unitsMatrix, *mTypeRight);
 
-    bool canMove = true;
-    for(auto &unit : unitsMatrix)
-        canMove &= unit.can_move_right();
-
-    if( canMove )
-        for(auto &unit : unitsMatrix)
-            unit.move_right();
-
-    for(auto &unit : unitsMatrix)
-        unit.imprintInMatrix();
+    delete mTypeRight;
 
     _matrix->printMatrix();
 }
 
 void MatrixFigure::move_left()
 {
-    for(auto &unit : unitsMatrix)
-        unit.clearMatrix();
+    MovementType* mTypeLeft = new MovementTypeMoveLeft(unitsMatrix);
+    MatrixFigureMoveFacade moveFacade(unitsMatrix, *mTypeLeft);
 
-    bool canMove = true;
-    for(int i=0; i<4; i++)
-        canMove &= unitsMatrix[i].can_move_left();
-
-    if( canMove )
-        for(auto &unit : unitsMatrix)
-            unit.move_left();
-
-    for(auto &unit : unitsMatrix)
-        unit.imprintInMatrix();
+    delete mTypeLeft;
 
     _matrix->printMatrix();
 }
-/*
-bool MatrixFigure::move(DIRECTION dir)
-{
-    bool canMove;
 
-    switch(dir)
-    {
-        case UP     : canMove = rotate_figure(); break;
-        case DOWN   : canMove = move_down    (); break;
-        case LEFT   : canMove = move_left    (); break;
-        case RIGHT  : canMove = move_right   (); break;
-    }
-
-    if( !canMove )
-    {
-        if ( dir == DOWN )
-        {
-            for(int i=0; i<4; i++)
-                unitsMatrix[i].imprintInMatrix();
-
-            _matrix->printMatrix();
-        }
-        return false;
-    }
-
-    for(int i=0; i<4; i++)
-        unitsMatrix[i].imprintInMatrix();
-
-    _matrix->printMatrix();
-
-    return true;
-}
-*/
 MatrixFigure::~MatrixFigure()
 {
     for(auto &unit : unitsVisual)

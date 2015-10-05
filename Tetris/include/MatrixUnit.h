@@ -34,6 +34,10 @@ class MatrixUnit : public Moving
         void clearMatrix();
 
     friend class MatrixFigure;
+    friend class MatrixFigureMoveFacade;
+    friend class MovementTypeMoveDown;
+    friend class MovementTypeMoveLeft;
+    friend class MovementTypeMoveRight;
 };
 
 #endif // MATRIXUNIT_H
