@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1444049440 source:c:\users\petar\documents\tetris\tetris\main.cpp
+1444064771 source:c:\users\petar\documents\tetris\tetris\main.cpp
 	<iostream>
 	<GL/glut.h>
 	"MatrixFigureT.h"
@@ -54,7 +54,7 @@
 	"TetrisMatrix.h"
 	"UnitVisual.h"
 
-1443978975 c:\users\petar\documents\tetris\tetris\include\figurecolors.h
+1444055684 c:\users\petar\documents\tetris\tetris\include\figurecolors.h
 
 1443979013 source:c:\users\petar\documents\tetris\tetris\src\figurecolors.cpp
 	"FigureColors.h"

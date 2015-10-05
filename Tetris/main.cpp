@@ -2,7 +2,8 @@
 #include <GL/glut.h>
 
 #define TIMER_ID 0
-#define TIMER_INTERVAL 100
+#define TIMER_INTERVAL 50
+#define DELTA_TIME 10
 
 #include "MatrixFigureT.h"
 #include "TetrisMatrix.h"
@@ -20,9 +21,18 @@ TetrisMatrix matrix;
 TetrisVisual tetris;
 MatrixFigure* figure;
 
+int animation_ongoing;
+int delta_time;
+bool max_speed;
 
 void init(void) {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
+
+	animation_ongoing = 0;
+    delta_time = DELTA_TIME;
+    max_speed = false;
+
+    figure = new MatrixFigureT(matrix, tetris);
 }
 
 void reshape(int w, int h) {
@@ -42,6 +52,30 @@ void reshape(int w, int h) {
 	glLoadIdentity();
 }
 
+void on_timer(int value){
+    if(value!=TIMER_ID)
+      return;
+
+    if( max_speed )
+        delta_time = 0;
+
+    if( delta_time-- == 0 )
+    {
+        if( ! figure->move_down() )
+            {
+                delete figure;
+                figure = new MatrixFigureT(matrix, tetris);
+                max_speed = false;
+            }
+
+        delta_time = DELTA_TIME;
+    }
+
+    glutPostRedisplay();
+    if(animation_ongoing)
+      glutTimerFunc(TIMER_INTERVAL, on_timer, TIMER_ID);
+  }
+
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -54,8 +88,14 @@ void display(void) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch (key) {
-    case 'a' : case 'A' :
-        cout << "proba za a" << endl; break;
+    case 'p' : case 'P' :
+        if(!animation_ongoing)
+        {
+          animation_ongoing = 1;
+          glutTimerFunc(TIMER_INTERVAL, on_timer, TIMER_ID);
+        } else
+            animation_ongoing = 0;
+        break;
     case 27:
         exit(0); // Exit the application if 'Esc' key is pressed
 	}
@@ -66,11 +106,7 @@ void special(int key, int x, int y) {
 		case GLUT_KEY_UP:
 		    figure->rotate_figure(); break;
 		case GLUT_KEY_DOWN :
-            if( ! figure->move_down() )
-            {
-                delete figure;
-                figure = new MatrixFigureT(matrix, tetris);
-            }
+            max_speed = true;
                 break;
         case GLUT_KEY_LEFT :
             figure->move_left(); break;
@@ -88,15 +124,15 @@ int main(int argc, char * argv[]) {
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize (800, 600);
-    glutCreateWindow (argv[0]);   init();
+    glutCreateWindow (argv[0]);
+
+    init();
 
     glutKeyboardFunc    (keyboard);
     glutDisplayFunc     (display );
     glutReshapeFunc     (reshape );
     glutSpecialFunc     (special );
     glutIdleFunc        (animate );
-
-    figure = new MatrixFigureT(matrix, tetris);
 
     glutMainLoop();
 

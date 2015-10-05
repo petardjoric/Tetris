@@ -8,7 +8,7 @@ class FigureColors
         FigureColors();
         virtual ~FigureColors();
 
-        static  float FigureTColor[3];
+        static float FigureTColor[3];
 };
 
 #endif // FIGURECOLORS_H
