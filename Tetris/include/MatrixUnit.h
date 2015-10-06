@@ -21,6 +21,10 @@ class MatrixUnit : public Moving
         UnitVisual* visualRepresentation;
         short _x, _y;
 
+        // useful for figure rotation
+        bool can_move_manual(int x, int y);
+        void move_manual    (int x, int y);
+
         // inherited from abstract class Moving
         bool move_down ();
         bool move_left ();
@@ -38,6 +42,8 @@ class MatrixUnit : public Moving
     friend class MovementTypeMoveDown;
     friend class MovementTypeMoveLeft;
     friend class MovementTypeMoveRight;
+    friend class MatrixFigureCube;
+    friend class MatrixFigureT;
 };
 
 #endif // MATRIXUNIT_H

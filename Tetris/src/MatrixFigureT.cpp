@@ -18,7 +18,17 @@ void MatrixFigureT::init_units()
 
 bool MatrixFigureT::rotate_figure()
 {
+    for(int i=0; i<4; i++)
+        unitsMatrix[i].clearMatrix();
 
+    // can move
+
+    // move
+
+    for(int i=0; i<4; i++)
+        unitsMatrix[i].imprintInMatrix();
+
+    _matrix->printMatrix();
 }
 
 MatrixFigureT::~MatrixFigureT()

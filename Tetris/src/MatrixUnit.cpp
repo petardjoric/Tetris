@@ -33,6 +33,24 @@ void MatrixUnit::set(int x, int y)
     TranslateMatrixToVisual translate(*visualRepresentation, _x, _y);
 }
 
+bool MatrixUnit::can_move_manual(int x, int y)
+{
+    bool canMove = true;
+
+    canMove &= x >= 0 && x < MATRIX_SIZE;
+    canMove &= y >= 0 && y < MATRIX_SIZE;
+    canMove &= !_matrix->matrix[_x+x][_y+y];
+
+    return canMove;
+}
+
+void MatrixUnit::move_manual(int x, int y)
+{
+    _x += x;
+    _y += y;
+    TranslateMatrixToVisual translate(*visualRepresentation, _x, _y);
+}
+
 bool MatrixUnit::move_down ()
 {
     _x += 1;

@@ -16,7 +16,7 @@ class MatrixFigureFactory
         MatrixFigureFactory(TetrisMatrix& matrix, TetrisVisual& tetris, MatrixFigure*& figure);
         virtual ~MatrixFigureFactory();
 
-        enum figure { FIGURE_T, FIGURE_CUBE };
+        enum figure_enum { FIGURE_T, FIGURE_CUBE };
 
         void generate();
         void delete_figure();
