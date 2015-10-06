@@ -9,6 +9,7 @@
 #include "MatrixFigureCube.h"
 #include "TetrisMatrix.h"
 #include "TetrisVisual.h"
+#include "MatrixFigureFactory.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ using namespace std;
 TetrisMatrix matrix;
 TetrisVisual tetris;
 MatrixFigure* figure;
+MatrixFigureFactory factory(matrix, tetris, figure);
 
 int animation_ongoing;
 int delta_time;
@@ -33,7 +35,8 @@ void init(void) {
     delta_time = DELTA_TIME;
     max_speed = false;
 
-    figure = new MatrixFigureCube(matrix, tetris);
+    factory.generate();
+    //figure = new MatrixFigureCube(matrix, tetris);
 }
 
 void reshape(int w, int h) {
@@ -64,8 +67,12 @@ void on_timer(int value){
     {
         if( ! figure->move_down() )
             {
-                delete figure;
-                figure = new MatrixFigureCube(matrix, tetris);
+                factory.delete_figure();
+                factory.generate();
+
+                //delete figure;
+                //figure = new MatrixFigureCube(matrix, tetris);
+
                 max_speed = false;
             }
 

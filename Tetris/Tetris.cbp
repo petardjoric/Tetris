@@ -41,6 +41,8 @@
 		</Linker>
 		<Unit filename="include/FigureColors.h" />
 		<Unit filename="include/MatrixFigure.h" />
+		<Unit filename="include/MatrixFigureCube.h" />
+		<Unit filename="include/MatrixFigureFactory.h" />
 		<Unit filename="include/MatrixFigureMoveFacade.h" />
 		<Unit filename="include/MatrixFigureT.h" />
 		<Unit filename="include/MatrixUnit.h" />
@@ -56,6 +58,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/FigureColors.cpp" />
 		<Unit filename="src/MatrixFigure.cpp" />
+		<Unit filename="src/MatrixFigureCube.cpp" />
+		<Unit filename="src/MatrixFigureFactory.cpp" />
 		<Unit filename="src/MatrixFigureMoveFacade.cpp" />
 		<Unit filename="src/MatrixFigureT.cpp" />
 		<Unit filename="src/MatrixUnit.cpp" />

@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1444076982 source:c:\users\petar\documents\tetris\tetris\main.cpp
+1444146092 source:c:\users\petar\documents\tetris\tetris\main.cpp
 	<iostream>
 	<GL/glut.h>
 	"MatrixFigureT.h"
 	"MatrixFigureCube.h"
 	"TetrisMatrix.h"
 	"TetrisVisual.h"
+	"MatrixFigureFactory.h"
 
 1443805209 source:c:\users\petar\documents\tetris\tetris\src\tetrismatrix.cpp
 	"TetrisMatrix.h"
@@ -118,10 +119,18 @@
 1444076909 c:\users\petar\documents\tetris\tetris\include\matrixfigurecube.h
 	"MatrixFigure.h"
 
-1444076923 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurefactory.cpp
+1444145744 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurefactory.cpp
 	"MatrixFigureFactory.h"
+	<iostream>
 
-1444076923 c:\users\petar\documents\tetris\tetris\include\matrixfigurefactory.h
+1444146166 c:\users\petar\documents\tetris\tetris\include\matrixfigurefactory.h
+	<ctime>
+	<cstdlib>
+	"MatrixFigure.h"
+	"TetrisMatrix.h"
+	"TetrisVisual.h"
+	"MatrixFigureT.h"
+	"MatrixFigureCube.h"
 
 1444077028 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurecube.cpp
 	"MatrixFigureCube.h"
