@@ -2,6 +2,7 @@
 #define TETRISVISUAL_H
 
 #include <vector>
+#include <GL/glut.h>
 
 #include "UnitVisual.h"
 

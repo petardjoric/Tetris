@@ -10,7 +10,6 @@ class MatrixFigureCube : public MatrixFigure
         virtual ~MatrixFigureCube();
     protected:
         // inherited from abstract class MatrixFigure
-         bool rotate_figure();
          void init_units();
 };
 

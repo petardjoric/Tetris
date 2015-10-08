@@ -8,6 +8,34 @@ MatrixFigure::MatrixFigure(TetrisMatrix& matrix, TetrisVisual& tetris, float col
     _tetris = &tetris;
 }
 
+void MatrixFigure::rotate_figure()
+{
+    for(int i=0; i<4; i++)
+        unitsMatrix[i].clearMatrix();
+
+    bool canMove = true;
+    for( int i=0; i<4; i++ ) {
+        canMove &= unitsMatrix[i].can_move_manual( initMatrixPosition[i][0], initMatrixPosition[i][1] );
+    }
+
+    if( canMove ) {
+        for(int i=0; i<4; i++)
+            unitsMatrix[i].move_manual( initMatrixPosition[i][0], initMatrixPosition[i][1] );
+    }
+
+    for(int i=0; i<4; i++)
+        unitsMatrix[i].imprintInMatrix();
+
+    _matrix->printMatrix();
+
+    if( canMove )
+        for(int i=0; i<4; i++) {
+            int tmp =  initMatrixPosition[i][0];
+            initMatrixPosition[i][0] = -initMatrixPosition[i][1];
+            initMatrixPosition[i][1] = tmp;
+        }
+}
+
 bool MatrixFigure::move_down()
 {
     MovementType* mTypeDown = new MovementTypeMoveDown(unitsMatrix);

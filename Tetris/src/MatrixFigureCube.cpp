@@ -14,11 +14,11 @@ void MatrixFigureCube::init_units()
     unitsMatrix[1].set(0,1);
     unitsMatrix[2].set(1,0);
     unitsMatrix[3].set(1,1);
-}
 
-bool MatrixFigureCube::rotate_figure()
-{
-
+    initMatrixPosition[0][0] = 0; initMatrixPosition[0][1] = 0;
+    initMatrixPosition[1][0] = 0; initMatrixPosition[1][1] = 0;
+    initMatrixPosition[2][0] = 0; initMatrixPosition[2][1] = 0;
+    initMatrixPosition[3][0] = 0; initMatrixPosition[3][1] = 0;
 }
 
 MatrixFigureCube::~MatrixFigureCube()

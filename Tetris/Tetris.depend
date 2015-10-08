@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1444146092 source:c:\users\petar\documents\tetris\tetris\main.cpp
+1444231045 source:c:\users\petar\documents\tetris\tetris\main.cpp
 	<iostream>
 	<GL/glut.h>
 	"MatrixFigureT.h"
@@ -11,13 +11,14 @@
 1443805209 source:c:\users\petar\documents\tetris\tetris\src\tetrismatrix.cpp
 	"TetrisMatrix.h"
 
-1444053015 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
+1444152116 c:\users\petar\documents\tetris\tetris\include\tetrismatrix.h
 	<iostream>
 
-1444072312 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
+1444323422 source:c:\users\petar\documents\tetris\tetris\src\matrixfigure.cpp
 	"MatrixFigure.h"
 
-1444070801 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
+1444323909 c:\users\petar\documents\tetris\tetris\include\matrixfigure.h
+	<cmath>
 	"MatrixUnit.h"
 	"TetrisMatrix.h"
 	"UnitVisual.h"
@@ -36,15 +37,16 @@
 	"UnitVisual.h"
 	"TranslateMatrixToVisual.h"
 
-1444147461 source:c:\users\petar\documents\tetris\tetris\src\matrixunit.cpp
+1444233669 source:c:\users\petar\documents\tetris\tetris\src\matrixunit.cpp
 	"MatrixUnit.h"
+	<iostream>
 
 1444045444 c:\users\petar\documents\tetris\tetris\include\moving.h
 
-1444046138 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguret.cpp
+1444323111 source:c:\users\petar\documents\tetris\tetris\src\matrixfiguret.cpp
 	"MatrixFigureT.h"
 
-1444046144 c:\users\petar\documents\tetris\tetris\include\matrixfiguret.h
+1444234103 c:\users\petar\documents\tetris\tetris\include\matrixfiguret.h
 	"MatrixFigure.h"
 
 1443791760 source:c:\users\petar\documents\tetris\tetris\src\moving.cpp
@@ -66,11 +68,12 @@
 1444076736 source:c:\users\petar\documents\tetris\tetris\src\figurecolors.cpp
 	"FigureColors.h"
 
-1444044825 source:c:\users\petar\documents\tetris\tetris\src\tetrisvisual.cpp
+1444231778 source:c:\users\petar\documents\tetris\tetris\src\tetrisvisual.cpp
 	"TetrisVisual.h"
 
-1444044812 c:\users\petar\documents\tetris\tetris\include\tetrisvisual.h
+1444231091 c:\users\petar\documents\tetris\tetris\include\tetrisvisual.h
 	<vector>
+	<GL/glut.h>
 	"UnitVisual.h"
 
 1443984686 source:c:\users\petar\documents\tetris\tetris\src\translatematrixtovisual.cpp
@@ -116,22 +119,28 @@
 	"MovementTypeMoveRight.h"
 	<iostream>
 
-1444076909 c:\users\petar\documents\tetris\tetris\include\matrixfigurecube.h
+1444234098 c:\users\petar\documents\tetris\tetris\include\matrixfigurecube.h
 	"MatrixFigure.h"
 
-1444146531 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurefactory.cpp
+1444228791 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurefactory.cpp
 	"MatrixFigureFactory.h"
 	<iostream>
 
-1444146502 c:\users\petar\documents\tetris\tetris\include\matrixfigurefactory.h
+1444152101 c:\users\petar\documents\tetris\tetris\include\matrixfigurefactory.h
 	<ctime>
 	<cstdlib>
 	"MatrixFigure.h"
-	"TetrisMatrix.h"
-	"TetrisVisual.h"
 	"MatrixFigureT.h"
 	"MatrixFigureCube.h"
+	"TetrisMatrix.h"
+	"TetrisVisual.h"
 
-1444077028 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurecube.cpp
+1444234088 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurecube.cpp
 	"MatrixFigureCube.h"
+
+1444233066 c:\users\petar\documents\tetris\tetris\include\matrixfigurerotation.h
+	"TetrisMatrix.h"
+
+1444233396 source:c:\users\petar\documents\tetris\tetris\src\matrixfigurerotation.cpp
+	"MatrixFigureRotation.h"
 

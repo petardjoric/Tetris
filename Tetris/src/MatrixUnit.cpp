@@ -1,5 +1,7 @@
 #include "MatrixUnit.h"
 
+#include <iostream>
+
 MatrixUnit::MatrixUnit(TetrisMatrix& matrix, UnitVisual & unitVisual)
 {
     visualRepresentation = &unitVisual;
@@ -37,11 +39,12 @@ bool MatrixUnit::can_move_manual(int x, int y)
 {
     bool canMove = true;
 
-    canMove &= x >= 0 && x < MATRIX_SIZE;
-    canMove &= y >= 0 && y < MATRIX_SIZE;
-    canMove &= !_matrix->matrix[_x+x][_y+y];
+    canMove &= _x + x >= 0 && _x + x < MATRIX_SIZE;
+    canMove &= _y + y >= 0 && _y + y < MATRIX_SIZE;
+    if( canMove &&!_matrix->matrix[_x+x][_y+y] )
+        return true;
 
-    return canMove;
+    return false;
 }
 
 void MatrixUnit::move_manual(int x, int y)

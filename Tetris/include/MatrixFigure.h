@@ -1,6 +1,8 @@
 #ifndef MATRIXFIGURE_H
 #define MATRIXFIGURE_H
 
+#include <cmath>
+
 #include "MatrixUnit.h"
 #include "TetrisMatrix.h"
 #include "UnitVisual.h"
@@ -19,7 +21,7 @@ class MatrixFigure //: public Moving
         explicit MatrixFigure(TetrisMatrix& matrix, TetrisVisual& tetris, float color[3]);
         virtual ~MatrixFigure();
 
-        enum DIRECTION { UP, DOWN, RIGHT, LEFT };
+        enum Direction { UP, DOWN, RIGHT, LEFT };
 
         // za brisanje
         void draw() {
@@ -31,7 +33,7 @@ class MatrixFigure //: public Moving
         void move_left ();
         void move_right();
 
-        virtual bool rotate_figure() = 0;
+        virtual void rotate_figure();
 
         //bool move(DIRECTION dir);
     protected:
@@ -40,6 +42,8 @@ class MatrixFigure //: public Moving
         UnitVisual unitsVisual[4];
         MatrixUnit unitsMatrix[4];
         FigureColors colors;
+        double rotationAngle;
+        int initMatrixPosition[4][2];
 
         // every concrete figure has its own implementation
 

@@ -14,22 +14,13 @@ void MatrixFigureT::init_units()
     unitsMatrix[1].set(0,1);
     unitsMatrix[2].set(0,2);
     unitsMatrix[3].set(0,3);
+
+    initMatrixPosition[0][0] = 1; initMatrixPosition[0][1] = 2;
+    initMatrixPosition[1][0] = 0; initMatrixPosition[1][1] =  1;
+    initMatrixPosition[2][0] = -1; initMatrixPosition[2][1] =  0;
+    initMatrixPosition[3][0] = -2; initMatrixPosition[3][1] =  -1;
 }
 
-bool MatrixFigureT::rotate_figure()
-{
-    for(int i=0; i<4; i++)
-        unitsMatrix[i].clearMatrix();
-
-    // can move
-
-    // move
-
-    for(int i=0; i<4; i++)
-        unitsMatrix[i].imprintInMatrix();
-
-    _matrix->printMatrix();
-}
 
 MatrixFigureT::~MatrixFigureT()
 {

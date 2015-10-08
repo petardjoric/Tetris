@@ -11,7 +11,6 @@ class MatrixFigureT : public MatrixFigure
         virtual ~MatrixFigureT();
     protected:
         // inherited from abstract class MatrixFigure
-         bool rotate_figure();
          void init_units();
 };
 

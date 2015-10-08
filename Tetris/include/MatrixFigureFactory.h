@@ -5,18 +5,16 @@
 #include <cstdlib>
 
 #include "MatrixFigure.h"
-#include "TetrisMatrix.h"
-#include "TetrisVisual.h"
 #include "MatrixFigureT.h"
 #include "MatrixFigureCube.h"
+#include "TetrisMatrix.h"
+#include "TetrisVisual.h"
 
 class MatrixFigureFactory
 {
     public:
         MatrixFigureFactory(TetrisMatrix& matrix, TetrisVisual& tetris, MatrixFigure*& figure);
         virtual ~MatrixFigureFactory();
-
-        enum figure_enum { FIGURE_T, FIGURE_CUBE };
 
         void generate();
         void delete_figure();

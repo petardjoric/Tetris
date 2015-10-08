@@ -11,6 +11,8 @@ class TetrisMatrix
         TetrisMatrix();
         virtual ~TetrisMatrix();
 
+        enum FigureEnum { FIGURE_T, FIGURE_CUBE };
+
         void printMatrix();
     private:
         bool matrix[MATRIX_SIZE][MATRIX_SIZE];
